@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Internet Connection Check</title>
+  <style>
+      #pln{
+          width: 75%;
+          aspect-ratio: 6/1;
+          background: yellow;
+          border: 2px solid black;
+          margin: 0 auto;
+          font-size: 56px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+  </style>
+</head>
+<body>
+    <div id="pln"><code><b>KLM NOP1</b></code></div>
+    <br><br>
+  <button id="checkConnectionButton" onclick="changeNumber()">Change Number Plate</button>
+
+
+     <div style="width: 70%; height: 60%; background: grey;">
+         <img src="https://photos.app.goo.gl/Ufs6xvqFp6YDoLrv5">
+      </div>
+  <script>
+     function changeNumber(){
+         
+         let letters = "QWERTYUIOPASDFGHJKLZXCVBNM";
+         let currentLetters = "BCD"
+         let lt1 = Math.floor(Math.random()*3);
+         let char1 = currentLetters.charAt(lt1);
+         
+         let lt2 = Math.floor(Math.random()*26);
+         let char2 = letters.charAt(lt2);
+         
+         let char3 = Math.floor(Math.random(1000-1)*1000);
+             if(char3<100){char3 = "0"+char3}
+             else if(char3<10){char3 = "00"+ char3};
+             
+         let lt4 = Math.floor(Math.random(26-1)*26);
+         let char4 = letters.charAt(lt4);
+         
+        // alert(char1)
+         
+         let generated = "K"+ char1+char2+ " " +char3+char4;
+         
+       //  alert(generated)
+         document.getElementById("pln").innerText = generated;
+     }
+     
+     
+  </script>
+</body>
+</html>
